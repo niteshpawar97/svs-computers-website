@@ -1,6 +1,6 @@
 import React from "react";
 import About from "../components/Home/About";
-import PrincipalMessage from "../components/Home/PrincipalMessage";
+
 function AboutPage() {
   return (
     <section className="pt-28 pb-16 bg-gray-50 min-h-screen">

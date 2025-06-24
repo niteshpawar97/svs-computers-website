@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "SVS",
+  "name": "SVS Computers | Chhindwara",
   "icons": [
     {
       "src": "favicon.ico",
@@ -18,8 +18,11 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": ".",
+  "start_url": "/",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#0F172A",
+  "background_color": "#ffffff",
+  "orientation": "portrait",
+  "description": "SVS Computers is a premier institute in Chhindwara offering BCA, DCA, PGDCA, and advanced computer courses with hands-on training and experienced faculty.",
+  "lang": "en-IN"
 }
