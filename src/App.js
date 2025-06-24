@@ -1,34 +1,37 @@
 // src/App.js
 import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import ScrollToTop from "./components/ScrollToTop";
 import Header from "./components/Header";
-import Hero from "./components/Hero";
-import About from "./components/About";
-import WhyChooseUs from "./components/WhyChooseUs";
-import Courses from "./components/Courses";
-import Facilities from "./components/Facilities";
-import Testimonials from "./components/Testimonials";
-import ContactForm from "./components/ContactForm";
-import Downloads from "./components/Downloads";
 import Footer from "./components/Footer";
-import WhatsAppButton from './components/WhatsAppButton';
-import CallButton from './components/CallButton';
+import WhatsAppButton from "./components/WhatsAppButton";
+import CallButton from "./components/CallButton";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import Home from "./pages/Home";
+import AboutPage from "./pages/AboutPage";
+import CoursesPage from "./pages/CoursesPage";
+import ContactPage from "./pages/ContactPage";
+import GalleryPage from "./pages/GalleryPage";
 
 function App() {
   return (
-    <div className="App bg-background text-secondary">
-      <Header />
-      <Hero />
-      <About />
-      <WhyChooseUs />
-      <Courses />
-      <Facilities />
-      <Testimonials /> 
-      <Downloads />
-      <ContactForm />
-      <Footer />
-      <WhatsAppButton /> {/* Fixed WhatsApp Button */}
-      <CallButton /> {/* Fixed Call Button */}
-    </div>
+    <Router>
+        <ScrollToTop />  {/* 👈 Add this line here */}
+      <div className="App bg-background text-secondary">
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/courses" element={<CoursesPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/gallery" element={<GalleryPage />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        </Routes>
+        <Footer />
+        <WhatsAppButton />
+        <CallButton />
+      </div>
+    </Router>
   );
 }
 

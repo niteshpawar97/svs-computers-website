@@ -1,14 +1,15 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    "./src/**/*.{js,jsx,ts,tsx}",
-  ],
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
       colors: {
-        primary: "#1A73E8", // blue
-        secondary: "#0A0A0A", // near-black
-        accent: "#FFC107", // yellow
+        primary: "#0a192f", // or your brand color
+        secondary: "#ffffff",
+        accent: "#00bcd4", // cyan or your highlight color
+        // primary: "#1A73E8", // blue
+        // secondary: "#0A0A0A", // near-black
+        // accent: "#FFC107", // yellow
         background: "#F4F7FA", // light gray background
         highlightBg: "#FCD34D", // soft yellow for highlighted text
       },
