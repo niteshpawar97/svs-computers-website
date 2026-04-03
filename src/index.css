@@ -1,18 +1,68 @@
-/* src/index.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@layer base {
+  :root {
+    --color-primary: #0a192f;
+    --color-accent: #00bcd4;
+    --color-background: #F4F7FA;
+    --color-surface: #ffffff;
+    --section-padding-y: 5rem;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer components {
+  .section-padding {
+    @apply py-16 md:py-20 lg:py-24 px-4;
+  }
+
+  .card-base {
+    @apply bg-white rounded-2xl shadow-card transition-all duration-300 hover:shadow-card-hover;
+  }
+
+  .btn-primary {
+    @apply bg-primary-900 text-white px-8 py-3 rounded-full font-semibold shadow-md transition-all duration-300 hover:bg-primary-700 hover:shadow-lg active:scale-95;
+  }
+
+  .btn-accent {
+    @apply bg-accent text-white px-8 py-3 rounded-full font-semibold shadow-md transition-all duration-300 hover:bg-accent-700 hover:shadow-lg active:scale-95;
+  }
+
+  .btn-outline {
+    @apply border-2 border-primary-900 text-primary-900 px-8 py-3 rounded-full font-semibold transition-all duration-300 hover:bg-primary-900 hover:text-white active:scale-95;
+  }
+
+  .glass {
+    @apply bg-white/70 backdrop-blur-xl border border-white/20;
+  }
+
+  .section-heading {
+    @apply text-3xl md:text-4xl lg:text-display-sm font-bold text-primary-900 text-center;
+  }
+}
+
+/* Swiper custom styles */
+.swiper-pagination-bullet {
+  width: 12px !important;
+  height: 12px !important;
+  background: rgba(255, 255, 255, 0.4) !important;
+  opacity: 1 !important;
+  transition: all 0.3s ease !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: #00bcd4 !important;
+  width: 32px !important;
+  border-radius: 6px !important;
 }

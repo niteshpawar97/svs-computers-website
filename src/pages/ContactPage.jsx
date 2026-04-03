@@ -1,95 +1,80 @@
-import React from "react";
-import ContactForm from "../components/ContactForm";
-import { motion } from "framer-motion";
-import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaClock } from "react-icons/fa";
+import { motion } from 'framer-motion';
+import PageBanner from '@components/ui/PageBanner';
+import Container from '@components/ui/Container';
+import Card from '@components/ui/Card';
+import ContactForm from '@components/common/ContactForm';
+import { siteConfig } from '@data/siteConfig';
+import { fadeUp, staggerContainer, viewportConfig, slideInLeft, slideInRight } from '@lib/animations';
+import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 
 function ContactPage() {
+  const contactCards = [
+    { icon: Phone, label: 'Phone', value: siteConfig.phone.join(', '), href: `tel:+91${siteConfig.phone[1]}` },
+    { icon: Mail, label: 'Email', value: siteConfig.email, href: `mailto:${siteConfig.email}` },
+    { icon: MapPin, label: 'Address', value: siteConfig.address },
+    { icon: Clock, label: 'Office Hours', value: `${siteConfig.officeHours.weekdays}\n${siteConfig.officeHours.weekend}` },
+  ];
+
   return (
-    <section className="pt-28 pb-16 bg-gray-50 min-h-screen">
-      <div className="container mx-auto px-4">
-        {/* Heading */}
-        <motion.h2
-          className="text-4xl font-semibold text-primary text-center mb-6"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          Contact Us
-        </motion.h2>
+    <>
+      <PageBanner
+        title="Contact Us"
+        subtitle="We'd love to hear from you. Reach out anytime."
+        breadcrumbs={[{ label: 'Contact' }]}
+      />
 
-        <motion.p
-          className="text-center text-gray-600 mb-12 max-w-xl mx-auto"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.3, duration: 0.5 }}
-        >
-          We'd love to hear from you. Please reach out using the form below or visit us in person.
-        </motion.p>
-
-        {/* Contact Info + Form Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-          {/* Contact Info */}
+      {/* Contact Cards */}
+      <section className="section-padding bg-white">
+        <Container>
           <motion.div
-            className="bg-white p-6 rounded-lg shadow text-gray-700"
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16"
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewportConfig}
           >
-            <h3 className="text-xl font-bold mb-4 text-primary">Get in Touch</h3>
-            <ul className="space-y-4">
-              <li className="flex items-center">
-                <FaPhoneAlt className="text-accent mr-3" />
-                <span>07162-246870, 9425146970</span>
-              </li>
-              <li className="flex items-center">
-                <FaEnvelope className="text-accent mr-3" />
-                <span>info@svscomputers.co.in</span>
-              </li>
-              <li className="flex items-center">
-                <FaMapMarkerAlt className="text-accent mr-3" />
-                <span>Vivekanand Colony, Old Nagpur Naka, Chhindwara, MP 480001</span>
-              </li>
-              <li className="flex items-start">
-                <FaClock className="text-accent mr-3 mt-1" />
-                <div>
-                  <strong className="block text-gray-800">Office Hours</strong>
-                  <p>Mon – Sat: 9:00 AM – 6:00 PM</p>
-                  <p>Sunday: Closed</p>
-                </div>
-              </li>
-            </ul>
+            {contactCards.map(({ icon: Icon, label, value, href }) => (
+              <motion.div key={label} variants={fadeUp}>
+                <Card className="text-center h-full" padding="lg">
+                  <div className="w-14 h-14 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Icon className="w-6 h-6 text-accent" />
+                  </div>
+                  <h4 className="font-semibold text-primary-900 mb-2">{label}</h4>
+                  {href ? (
+                    <a href={href} className="text-gray-600 text-sm hover:text-accent transition-colors whitespace-pre-line">{value}</a>
+                  ) : (
+                    <p className="text-gray-600 text-sm whitespace-pre-line">{value}</p>
+                  )}
+                </Card>
+              </motion.div>
+            ))}
           </motion.div>
 
-          {/* Contact Form */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <ContactForm />
-          </motion.div>
-        </div>
-
-        {/* Embedded Google Map */}
-        <motion.div
-          className="rounded-lg overflow-hidden shadow-md"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5, duration: 0.8 }}
-        >
-          <iframe
-            title="Google Map"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3698.1559183583418!2d78.92775728549219!3d22.043630400266725!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd568ac4c853d11%3A0xb278579cda695bac!2sSVS%20Computers%20Chhindwara!5e0!3m2!1sen!2sin!4v1750771710416!5m2!1sen!2sin"
-            width="100%"
-            height="400"
-            allowFullScreen=""
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            className="w-full h-80 border-0"
-          ></iframe>
-        </motion.div>
-      </div>
-    </section>
+          {/* Form + Map */}
+          <div className="grid lg:grid-cols-2 gap-12">
+            <motion.div variants={slideInLeft} initial="hidden" whileInView="visible" viewport={viewportConfig}>
+              <h3 className="text-2xl font-bold text-primary-900 mb-6">Send us a Message</h3>
+              <ContactForm />
+            </motion.div>
+            <motion.div variants={slideInRight} initial="hidden" whileInView="visible" viewport={viewportConfig}>
+              <h3 className="text-2xl font-bold text-primary-900 mb-6">Find Us</h3>
+              <div className="rounded-2xl overflow-hidden shadow-card h-[400px]">
+                <iframe
+                  title="SVS Computers Location"
+                  src={siteConfig.mapEmbedUrl}
+                  width="100%"
+                  height="100%"
+                  allowFullScreen=""
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="w-full h-full border-0"
+                />
+              </div>
+            </motion.div>
+          </div>
+        </Container>
+      </section>
+    </>
   );
 }
 

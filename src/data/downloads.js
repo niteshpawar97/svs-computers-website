@@ -1,0 +1,57 @@
+export const downloads = [
+  {
+    title: 'BCA QPAPER - English',
+    category: 'Question Papers',
+    description: 'Download first semester old question papers.',
+    link: 'http://svscomputers.co.in/Uploads/Downloads/bca-1-sem-communicative-english-7045-feb-2022.pdf',
+    course: 'BCA',
+  },
+  {
+    title: 'PGDCA QPAPER',
+    category: 'Question Papers',
+    description: 'Download latest question paper of first semester.',
+    link: 'http://svscomputers.co.in/Uploads/Downloads/pgdca-1-sem-database-using-ms-access-7620-jan-2023.pdf',
+    course: 'PGDCA',
+  },
+  {
+    title: 'AICPE',
+    category: 'Resources',
+    description: 'Download AICPE materials.',
+    link: 'https://www.aicpeindia.ac.in/',
+  },
+  {
+    title: 'BCA SYLLABUS',
+    category: 'Syllabus',
+    description: 'Download latest 2020 syllabus of BCA.',
+    link: 'https://www.mcu.ac.in/wp-content/uploads/2021/01/BCA-CBCS-Syllabus-2020.pdf',
+    course: 'BCA',
+  },
+  {
+    title: 'DCA SYLLABUS',
+    category: 'Syllabus',
+    description: 'Download syllabus of Makhanlal University DCA.',
+    link: 'https://www.mcu.ac.in/download/DCA_PGDCA_SYLLABUS_FROM_JULY_2018/DCA_Syllabus_july_2018.pdf',
+    course: 'DCA',
+  },
+  {
+    title: 'MSC CS SYLLABUS',
+    category: 'Syllabus',
+    description: 'Download syllabus of MCU PG Degree course MSC.',
+    link: 'https://www.mcu.ac.in/wp-content/uploads/2019/08/updated-msc-cs-syllabus-2019.pdf',
+    course: 'M.Sc. CS',
+  },
+  {
+    title: 'PGDCA SYLLABUS',
+    category: 'Syllabus',
+    description: 'Download syllabus of PGDCA.',
+    link: 'https://www.mcu.ac.in/wp-content/uploads/2021/01/BCA-CBCS-Syllabus-2020.pdf',
+    course: 'PGDCA',
+  },
+  {
+    title: 'STUDY MATERIAL DIPLOMA',
+    category: 'Study Material',
+    description: 'Download notes of DCA PGDCA.',
+    link: 'https://www.mcu.ac.in/online-study-for-pgdca-and-dca',
+    course: 'DCA/PGDCA',
+  },
+];
