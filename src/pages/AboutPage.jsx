@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import SEO from '@components/seo/SEO';
 import PageBanner from '@components/ui/PageBanner';
 import Container from '@components/ui/Container';
 import SectionHeading from '@components/ui/SectionHeading';
@@ -27,6 +28,11 @@ function AboutPage() {
 
   return (
     <>
+      <SEO
+        title="About Us - Best Computer Institute Since 2008"
+        description="Learn about SVS Computers Chhindwara - ISO 9001:2008 certified computer education institute. 15+ years of excellence, 5000+ students trained. AICPE affiliated center in Chhindwara, MP."
+        path="/about"
+      />
       <PageBanner
         title="About SVS Computers"
         subtitle="A premier computer education institute committed to excellence since 2008."

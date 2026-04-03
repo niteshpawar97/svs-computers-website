@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import SEO from '@components/seo/SEO';
 import PageBanner from '@components/ui/PageBanner';
 import Container from '@components/ui/Container';
 import SectionHeading from '@components/ui/SectionHeading';
@@ -18,6 +19,11 @@ function AdmissionsPage() {
 
   return (
     <>
+      <SEO
+        title="Admissions Open 2026-27 - Apply Now"
+        description="Admissions open at SVS Computers Chhindwara for 2026-27. Apply for BCA, M.Sc CS, PGDCA, DCA, Tally courses. Easy process, affordable fees, EMI available. Call 9425146970."
+        path="/admissions"
+      />
       <PageBanner
         title="Admissions 2026-27"
         subtitle="Start your journey in technology. Applications are now open."

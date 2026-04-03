@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import SEO from '@components/seo/SEO';
 import PageBanner from '@components/ui/PageBanner';
 import Container from '@components/ui/Container';
 import Card from '@components/ui/Card';
@@ -24,6 +25,11 @@ function NoticesPage() {
 
   return (
     <>
+      <SEO
+        title="Notice Board - Latest News & Announcements"
+        description="Latest notices, announcements, exam schedules and events at SVS Computers Chhindwara. Stay updated with admissions, results and important dates."
+        path="/notices"
+      />
       <PageBanner
         title="Notice Board"
         subtitle="Stay updated with the latest announcements and news."

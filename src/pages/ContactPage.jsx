@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import SEO from '@components/seo/SEO';
 import PageBanner from '@components/ui/PageBanner';
 import Container from '@components/ui/Container';
 import Card from '@components/ui/Card';
@@ -17,6 +18,29 @@ function ContactPage() {
 
   return (
     <>
+      <SEO
+        title="Contact Us - Visit SVS Computers Chhindwara"
+        description="Contact SVS Computers Chhindwara. Address: Vivekanand Colony, Old Nagpur Naka, Chhindwara MP 480001. Phone: 9425146970, 07162-246870. Email: info@svscomputers.co.in"
+        path="/contact"
+      >
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          "name": "SVS Computers",
+          "telephone": "+919425146970",
+          "email": "info@svscomputers.co.in",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Vivekanand Colony, Old Nagpur Naka",
+            "addressLocality": "Chhindwara",
+            "addressRegion": "Madhya Pradesh",
+            "postalCode": "480001",
+            "addressCountry": "IN"
+          },
+          "openingHours": "Mo-Sa 09:00-18:00",
+          "url": "https://svscomputers.co.in/contact"
+        })}</script>
+      </SEO>
       <PageBanner
         title="Contact Us"
         subtitle="We'd love to hear from you. Reach out anytime."

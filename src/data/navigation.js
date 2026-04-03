@@ -5,6 +5,7 @@ export const navLinks = [
   { label: 'Admissions', path: '/admissions' },
   { label: 'Faculty', path: '/faculty' },
   { label: 'Gallery', path: '/gallery' },
+  { label: 'Blog', path: '/blog' },
   { label: 'Contact', path: '/contact' },
 ];
 
@@ -15,5 +16,6 @@ export const footerQuickLinks = [
   { label: 'Contact', path: '/contact' },
   { label: 'Gallery', path: '/gallery' },
   { label: 'Admissions', path: '/admissions' },
+  { label: 'Blog', path: '/blog' },
   { label: 'Privacy Policy', path: '/privacy-policy' },
 ];

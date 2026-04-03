@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import SEO from '@components/seo/SEO';
 import PageBanner from '@components/ui/PageBanner';
 import Container from '@components/ui/Container';
 import Modal from '@components/ui/Modal';
@@ -19,6 +20,11 @@ function GalleryPage() {
 
   return (
     <>
+      <SEO
+        title="Campus Gallery - Photos of SVS Computers Chhindwara"
+        description="View photos of SVS Computers campus in Chhindwara. Modern computer labs, classrooms, student activities, and campus facilities. See our infrastructure."
+        path="/gallery"
+      />
       <PageBanner
         title="Campus Gallery"
         subtitle="A glimpse into our facilities, events, and campus life."

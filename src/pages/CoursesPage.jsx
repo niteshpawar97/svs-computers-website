@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import SEO from '@components/seo/SEO';
 import PageBanner from '@components/ui/PageBanner';
 import Container from '@components/ui/Container';
 import Card from '@components/ui/Card';
@@ -17,6 +18,11 @@ function CoursesPage() {
 
   return (
     <>
+      <SEO
+        title="Computer Courses - BCA, PGDCA, DCA, Tally, M.Sc CS"
+        description="Explore computer courses at SVS Computers Chhindwara. BCA (3 Years), M.Sc CS (2 Years), PGDCA (1 Year), DCA (1 Year), Tally Prime courses. Affiliated with Makhanlal University. Admissions open."
+        path="/courses"
+      />
       <PageBanner
         title="Our Programs"
         subtitle="Industry-aligned courses designed to build your career in technology."

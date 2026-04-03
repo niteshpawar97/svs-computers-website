@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import SEO from '@components/seo/SEO';
 import PageBanner from '@components/ui/PageBanner';
 import Container from '@components/ui/Container';
 import SectionHeading from '@components/ui/SectionHeading';
@@ -11,6 +12,11 @@ import principalImage from '@assets/images/principal.jpg';
 function FacultyPage() {
   return (
     <>
+      <SEO
+        title="Our Faculty & Staff - Expert Computer Teachers"
+        description="Meet the experienced faculty at SVS Computers Chhindwara. Qualified teachers with 6-12+ years experience in programming, Tally, computer applications, and networking."
+        path="/faculty"
+      />
       <PageBanner
         title="Our Faculty & Staff"
         subtitle="Meet the dedicated professionals behind your education."

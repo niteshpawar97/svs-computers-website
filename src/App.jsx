@@ -12,6 +12,8 @@ const AdmissionsPage = lazy(() => import('@pages/AdmissionsPage'));
 const FacultyPage = lazy(() => import('@pages/FacultyPage'));
 const NoticesPage = lazy(() => import('@pages/NoticesPage'));
 const PrivacyPolicyPage = lazy(() => import('@pages/PrivacyPolicyPage'));
+const BlogPage = lazy(() => import('@pages/BlogPage'));
+const BlogPostPage = lazy(() => import('@pages/BlogPostPage'));
 const NotFoundPage = lazy(() => import('@pages/NotFoundPage'));
 
 function PageLoader() {
@@ -39,6 +41,8 @@ function App() {
             <Route path="/admissions" element={<AdmissionsPage />} />
             <Route path="/faculty" element={<FacultyPage />} />
             <Route path="/notices" element={<NoticesPage />} />
+            <Route path="/blog" element={<BlogPage />} />
+            <Route path="/blog/:slug" element={<BlogPostPage />} />
             <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Route>

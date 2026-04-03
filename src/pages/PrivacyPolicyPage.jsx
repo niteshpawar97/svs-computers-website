@@ -1,9 +1,16 @@
+import SEO from '@components/seo/SEO';
 import PageBanner from '@components/ui/PageBanner';
 import Container from '@components/ui/Container';
 
 function PrivacyPolicyPage() {
   return (
     <>
+      <SEO
+        title="Privacy Policy"
+        description="Privacy policy of SVS Computers Chhindwara. Learn how we collect, use and protect your personal information."
+        path="/privacy-policy"
+        noindex
+      />
       <PageBanner
         title="Privacy Policy"
         subtitle="How we collect, use, and protect your information."
